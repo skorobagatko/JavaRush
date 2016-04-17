@@ -9,8 +9,7 @@ import java.io.*;
 3. выводит на экран максимальное из введенных N чисел.
 */
 
-public class Solution
-{
+public class Solution {
     public static void main(String[] args) throws Exception
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
