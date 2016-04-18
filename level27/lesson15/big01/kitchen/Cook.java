@@ -19,7 +19,8 @@ public class Cook extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        ConsoleHelper.writeMessage("Start cooking - " + arg);
+        Order order = (Order) arg;
+        ConsoleHelper.writeMessage("Start cooking - " + order + ", cooking time " + order.getTotalCookingTime() + "min");
         this.setChanged();
         this.notifyObservers(arg);
     }

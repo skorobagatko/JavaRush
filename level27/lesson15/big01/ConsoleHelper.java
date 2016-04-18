@@ -23,12 +23,18 @@ public class ConsoleHelper {
         List<Dish> result = new ArrayList<>();
         writeMessage("Please, choose the dish.\n" + Dish.allDishesToString());
         String input;
+        boolean isDishExists = false;
         while (!(input = readString()).equals("exit")) {
             for (Dish dish : Dish.values()) {
                 if (input.equals(dish.toString())) {
                     result.add(dish);
+                    isDishExists = true;
                 }
             }
+            if (!isDishExists) {
+                writeMessage(input + " is not detected");
+            }
+            isDishExists = false;
         }
 
         return result;
